@@ -5,6 +5,7 @@ import img from "/01.jpg";
 import "./App.scss";
 import EmailIcon from "./icons/EmailIcon";
 import TelIcon from "./icons/TelIcon";
+import ArrowDownIcon from "./icons/ArrowDownIcon";
 
 const servicesData = [
 	{
@@ -73,11 +74,14 @@ function App() {
 						</p>
 						<CustomBtnLink path="#contact" name="Nezávazná konzultace" />
 						<div className="hero__divider"></div>
-						<a
-							style={{ color: "#fff", alignSelf: "flex-end" }}
-							href="#about-me"
-						>
-							Scroll to explore
+						<a className="hero__link" href="#about-me">
+							<span>Posuňte se dolů</span>
+							<span className="hero__link-container">
+								<span className="hero__link-container-inner">
+									<ArrowDownIcon />
+									<ArrowDownIcon />
+								</span>
+							</span>
 						</a>
 					</div>
 				</section>
