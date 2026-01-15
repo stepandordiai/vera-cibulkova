@@ -1,18 +1,25 @@
-import logo from "/logo-white.svg";
-import "./Header.scss";
 import { useEffect, useState } from "react";
 import CustomBtnLink from "../CustomBtnLink/CustomBtnLink";
+import logo from "/logo-white.svg";
+import "./Header.scss";
 
 const Header = () => {
-	const [headerActive, setHeaderActive] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [headerHidden, setHeaderHidden] = useState(false);
 
 	useEffect(() => {
-		const handleHeaderActive = () => setHeaderActive(window.scrollY > 0);
+		let prevScrollY = 0;
 
-		window.addEventListener("scroll", handleHeaderActive);
+		const handleHeader = () => {
+			const scrollY = window.scrollY;
 
-		return () => window.removeEventListener("scroll", handleHeaderActive);
+			setHeaderHidden(scrollY > prevScrollY);
+			prevScrollY = scrollY;
+		};
+
+		window.addEventListener("scroll", handleHeader);
+
+		return () => window.removeEventListener("scroll", handleHeader);
 	}, []);
 
 	function toggleMenu() {
@@ -20,11 +27,7 @@ const Header = () => {
 	}
 
 	return (
-		<header
-			className={`header ${headerActive ? "header--scrolled" : ""} ${
-				menuOpen ? "header--menu-open" : ""
-			}`.trim()}
-		>
+		<header className={`header ${headerHidden ? "header--hidden" : ""}`.trim()}>
 			<div className="header-inner">
 				<a className="header__logo" href="">
 					<img src={logo} alt="" />
