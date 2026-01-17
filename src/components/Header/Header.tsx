@@ -5,29 +5,87 @@ import "./Header.scss";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
-	const [headerHidden, setHeaderHidden] = useState(false);
+	// const [headerHidden, setHeaderHidden] = useState(false);
 
-	useEffect(() => {
-		let prevScrollY = 0;
+	// useEffect(() => {
+	// 	let prevScrollY = 0;
 
-		const handleHeader = () => {
-			const scrollY = window.scrollY;
+	// 	const handleHeader = () => {
+	// 		const scrollY = window.scrollY;
 
-			setHeaderHidden(scrollY > prevScrollY);
-			prevScrollY = scrollY;
-		};
+	// 		setHeaderHidden(
+	// 			scrollY > prevScrollY && prevScrollY > window.innerHeight / 2,
+	// 		);
+	// 		prevScrollY = scrollY;
+	// 	};
 
-		window.addEventListener("scroll", handleHeader);
+	// 	window.addEventListener("scroll", handleHeader);
 
-		return () => window.removeEventListener("scroll", handleHeader);
-	}, []);
+	// 	return () => window.removeEventListener("scroll", handleHeader);
+	// }, []);
 
 	function toggleMenu() {
 		setMenuOpen((prev) => !prev);
 	}
 
+	function getRect(
+		sections: (HTMLElement | null)[],
+		navLinks: NodeListOf<HTMLElement>,
+		menuNavLinks: NodeListOf<HTMLElement>,
+	) {
+		navLinks.forEach((link) =>
+			link.classList.remove("header-nav__link--active"),
+		);
+
+		menuNavLinks.forEach((link) =>
+			link.classList.remove("menu-nav__link--active"),
+		);
+
+		sections.forEach((section, index) => {
+			if (!section) return;
+
+			const sectionRect = section.getBoundingClientRect();
+
+			if (sectionRect.top <= 91 && sectionRect.bottom >= 100) {
+				navLinks[index].classList.add("header-nav__link--active");
+				menuNavLinks[index].classList.add("menu-nav__link--active");
+			}
+		});
+	}
+
+	// FIXME:
+	useEffect(() => {
+		const sections = [
+			document.getElementById("hero"),
+			document.getElementById("about-me"),
+			document.getElementById("services"),
+			document.getElementById("why-me"),
+			document.getElementById("contact"),
+		];
+		const navLinks =
+			document.querySelectorAll<HTMLAnchorElement>(".header-nav__link");
+		const menuNavLinks =
+			document.querySelectorAll<HTMLAnchorElement>(".menu-nav__link");
+
+		const handleGetRectOnScroll = () =>
+			getRect(sections, navLinks, menuNavLinks);
+
+		// setTimeout(() => {
+		handleGetRectOnScroll();
+		// }, 100);
+
+		if (!navLinks.length || !menuNavLinks.length || !sections.some(Boolean))
+			return;
+
+		window.addEventListener("scroll", handleGetRectOnScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleGetRectOnScroll);
+		};
+	}, []);
+
 	return (
-		<header className={`header ${headerHidden ? "header--hidden" : ""}`.trim()}>
+		<header className="header">
 			<div className="header-inner">
 				<a className="header__logo" href="">
 					<img src={logo} alt="" />

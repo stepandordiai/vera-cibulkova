@@ -1,11 +1,15 @@
 .footer {
-	background: rgb(255, 255, 255);
+	// background: rgb(255, 255, 255);
 	border-radius: 40px;
 	padding: 20px;
 	margin: 10px;
 	display: flex;
 	flex-direction: column;
-	color: #000;
+	color: #fff;
+	background-image: url("/bg-purple.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 .footer-nav {
@@ -17,7 +21,7 @@
 
 .footer-nav-inner {
 	display: flex;
-	gap: 10px;
+	gap: 20px;
 	flex-wrap: wrap;
 }
 
@@ -29,7 +33,7 @@
 
 .footer-nav-list {
 	a {
-		color: #000;
+		color: #fff;
 
 		&:hover {
 			color: var(--clr-2);
@@ -38,7 +42,7 @@
 }
 
 .footer-nav__link {
-	color: #000;
+	color: #fff;
 
 	&:hover {
 		color: var(--clr-2);
@@ -52,13 +56,15 @@
 .footer__name-logo {
 	text-align: center;
 	font-size: 12vw;
-	color: rgba(0, 0, 0, 0.2);
+	color: #fff;
+	line-height: 1;
+	margin-top: 20px;
 }
 
 .footer__divider {
 	height: 2px;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(255, 255, 255, 0.2);
 	margin: 10px 0;
 }
 
@@ -67,4 +73,14 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	column-gap: 10px;
+}
+
+.author {
+	a {
+		color: #fff;
+
+		&:hover {
+			color: var(--clr-2);
+		}
+	}
 }

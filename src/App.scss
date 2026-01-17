@@ -43,19 +43,32 @@ body {
 	align-items: flex-start;
 	flex-direction: column;
 	gap: 10px;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	background: var(--semi-tp-clr-1);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	// background: var(--semi-tp-clr-1);
+	background: rgba(0, 0, 0, 0.2);
 	padding: 20px;
 	border-radius: 40px;
 	width: 100%;
+	// opacity: 0;
+	// filter: blur(10px);
+	// animation: animateHeroContainer 1s forwards;
 }
+
+// @keyframes animateHeroContainer {
+// 	to {
+// 		opacity: 1;
+// 		filter: blur(0);
+// 	}
+// }
 
 .hero__title {
 	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 600;
 }
 
 .hero__subtitle {
+	font-size: 20px;
 }
 
 .hero__divider {
@@ -105,10 +118,13 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 25px;
+	width: min(100%, 1000px);
+	margin: 0 auto;
 }
 
 .about-me__img {
 	width: min(100%, 500px);
+	border-radius: 40px;
 }
 
 .about-me__sign {
@@ -137,13 +153,49 @@ body {
 	}
 }
 
-.services-item__bg-icon {
+.why-me-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.why-me-item {
+	position: relative;
+	z-index: 1;
+	// background: rgba(255, 255, 255, 0.1);
+	background-image: url("/bg-black.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 20px 20px 104px 20px;
+	border-radius: 40px;
+	overflow: hidden;
+
+	h3 {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+}
+
+.why-me-item__icon {
+	position: absolute;
+	z-index: -1;
+	transform: rotateY(180deg);
+	right: 0;
+	bottom: 0;
+	width: 100px;
+}
+
+.services-item__bg-icon-wrapper {
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
 	width: 100px;
 	height: 100px;
 	z-index: -1;
+}
+
+.services-item__bg-icon {
 	filter: blur(5px);
 }
 
@@ -157,7 +209,8 @@ h2 {
 	width: max-content;
 	padding: 5px;
 	border-radius: 20px;
-	background: var(--clr-1);
+	// background: var(--clr-1);
+	background: rgba(255, 255, 255, 0.1);
 	height: 40px;
 	color: var(--clr-2);
 	font-weight: 600;
@@ -169,6 +222,10 @@ h2 {
 		padding: 5px 7.5px;
 		height: 30px;
 	}
+}
+
+p {
+	font-size: 18px;
 }
 
 // contact
@@ -189,10 +246,11 @@ h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--clr-1);
+	background: rgba(255, 255, 255, 0.1);
 	width: 40px;
 	aspect-ratio: 1/1;
 	border-radius: 20px;
+	color: var(--clr-2);
 }
 
 .contact__map {
@@ -205,10 +263,18 @@ h2 {
 	.services-list {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	.why-me-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media screen and (width < 900px) {
 	.services-list {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.why-me-list {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
@@ -231,9 +297,5 @@ h2 {
 
 	.about-me-container {
 		flex-direction: column;
-	}
-
-	.services-list {
-		grid-template-columns: repeat(1, 1fr);
 	}
 }

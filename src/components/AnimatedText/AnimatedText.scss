@@ -1,0 +1,10 @@
+.text {
+	opacity: 0;
+	filter: blur(10px);
+	transition: all 1s;
+}
+
+.text--animate {
+	opacity: 1;
+	filter: blur(0px);
+}

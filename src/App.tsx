@@ -6,6 +6,9 @@ import "./App.scss";
 import EmailIcon from "./icons/EmailIcon";
 import TelIcon from "./icons/TelIcon";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
+import AnimatedText from "./components/AnimatedText/AnimatedText";
+import qr from "/qr.png";
+import logoIcon from "/logo-animal.png";
 
 const servicesData = [
 	{
@@ -65,13 +68,17 @@ function App() {
 			<main className="home">
 				<section className="hero" id="hero">
 					<div className="hero-container">
-						<h1 className="hero__title">
-							Finance a reality nemusí být složité.
-						</h1>
-						<p className="hero__subtitle">
-							Pomohu vám dělat rozhodnutí, která dávají smysl dnes i do budoucna
-							- s klidem, pochopením a dlouhodobou péčí.
-						</p>
+						<AnimatedText>
+							<h1 className="hero__title">
+								Finance a reality nemusí být složité.
+							</h1>
+						</AnimatedText>
+						<AnimatedText>
+							<p className="hero__subtitle">
+								Pomohu vám dělat rozhodnutí, která dávají smysl dnes i do
+								budoucna - s klidem, pochopením a dlouhodobou péčí.
+							</p>
+						</AnimatedText>
 						<CustomBtnLink path="#contact" name="Nezávazná konzultace" />
 						<div className="hero__divider"></div>
 						<a className="hero__link" href="#about-me">
@@ -89,31 +96,45 @@ function App() {
 					<h2>
 						<span>O MNĚ</span>
 					</h2>
-					<p style={{ width: "min(100%, 500px)", marginBottom: 10 }}>
-						Jmenuji se Věra Cibulková a financím se věnuji více než deset let.
-						Zkušenosti jsem získala v bankovním prostředí, kde jsem pracovala s
-						fyzickými osobami i firemními klienty a poznala finance z pohledu
-						produktů i schvalovacích procesů.
-					</p>
+
 					<div className="about-me-container">
-						<img className="about-me__img" src={img} alt="" />
+						<AnimatedText>
+							<img className="about-me__img" src={img} alt="" />
+						</AnimatedText>
 						<div>
-							<p>
-								Dnes navrhuji řešení napříč trhem s nadhledem a důrazem na to,
-								aby finance dávaly smysl konkrétním lidem, ne jen číslům.
-								Působím v oblasti financí a realit pod odborným zázemím
-								společnosti EDO FINANCE a pomáhám klientům s důležitými
-								finančními rozhodnutími v osobním i podnikatelském životě.
-							</p>
+							<AnimatedText>
+								<p>
+									Jmenuji se Věra Cibulková a financím se věnuji více než deset
+									let. Zkušenosti jsem získala v bankovním prostředí, kde jsem
+									pracovala s fyzickými osobami i firemními klienty a poznala
+									finance z pohledu produktů i schvalovacích procesů.
+								</p>
+							</AnimatedText>
 							<br />
-							<p>
-								Můj přístup je založený na důvěře, otevřenosti a dlouhodobé
-								spolupráci. Záleží mi na tom, aby klient odcházel nejen s dobře
-								nastaveným řešením, ale i s pocitem jistoty a klidu. Největší
-								odměnou je pro mě doporučení - když mě klient svěří svým
-								nejbližším, vím, že má práce dává smysl.
-							</p>
-							<p className="about-me__sign">Věra Cibulková</p>
+
+							<AnimatedText>
+								<p>
+									Dnes navrhuji řešení napříč trhem s nadhledem a důrazem na to,
+									aby finance dávaly smysl konkrétním lidem, ne jen číslům.
+									Působím v oblasti financí a realit pod odborným zázemím
+									společnosti EDO FINANCE a pomáhám klientům s důležitými
+									finančními rozhodnutími v osobním i podnikatelském životě.
+								</p>
+							</AnimatedText>
+
+							<br />
+							<AnimatedText>
+								<p>
+									Můj přístup je založený na důvěře, otevřenosti a dlouhodobé
+									spolupráci. Záleží mi na tom, aby klient odcházel nejen s
+									dobře nastaveným řešením, ale i s pocitem jistoty a klidu.
+									Největší odměnou je pro mě doporučení - když mě klient svěří
+									svým nejbližším, vím, že má práce dává smysl.
+								</p>
+							</AnimatedText>
+							<AnimatedText>
+								<p className="about-me__sign">Věra Cibulková</p>
+							</AnimatedText>
 						</div>
 					</div>
 				</section>
@@ -130,15 +151,21 @@ function App() {
 										src={service.icon}
 										alt=""
 									/>
-									<h3>{service.title}</h3>
-									<p>{service.desc}</p>
-									<img
-										className="services-item__bg-icon"
-										src={service.icon}
-										width={24}
-										height={24}
-										alt=""
-									/>
+									<AnimatedText>
+										<h3>{service.title}</h3>
+									</AnimatedText>
+									<AnimatedText>
+										<p>{service.desc}</p>
+									</AnimatedText>
+									<div className="services-item__bg-icon-wrapper">
+										<AnimatedText>
+											<img
+												className="services-item__bg-icon"
+												src={service.icon}
+												alt=""
+											/>
+										</AnimatedText>
+									</div>
 								</li>
 							);
 						})}
@@ -148,12 +175,18 @@ function App() {
 					<h2>
 						<span>PROČ SE MNOU SPOLUPRACOVAT</span>
 					</h2>
-					<ul>
+					<ul className="why-me-list">
 						{whyMeData.map((whyMe, i) => {
 							return (
-								<li key={i}>
-									<h3>{whyMe.title}</h3>
-									<p>{whyMe.desc}</p>
+								<li key={i} className="why-me-item">
+									<AnimatedText>
+										<h3>{whyMe.title}</h3>
+									</AnimatedText>
+									<div className="footer__divider"></div>
+									<AnimatedText>
+										<p>{whyMe.desc}</p>
+									</AnimatedText>
+									<img className="why-me-item__icon" src={logoIcon} alt="" />
 								</li>
 							);
 						})}
@@ -190,13 +223,14 @@ function App() {
 									target="_blank"
 								/>
 							</div>
+							<img style={{ margin: "auto 0" }} src={qr} width={150} alt="" />
 						</div>
 						<iframe
 							className="contact__map"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.748386863162!2d15.775960311998487!3d50.030243617411955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc91d914e045%3A0x8e8920c9ebba8835!2sS.%20K.%20Neumanna%201220%2C%20530%2002%20Pardubice%20V-Zelen%C3%A9%20P%C5%99edm%C4%9Bst%C3%AD!5e1!3m2!1sen!2scz!4v1768481888847!5m2!1sen!2scz"
 							// style="border:0;"
 							// allowfullscreen=""
-							loading="lazy"
+							// loading="lazy"
 							referrerPolicy="no-referrer-when-downgrade"
 						></iframe>
 					</div>

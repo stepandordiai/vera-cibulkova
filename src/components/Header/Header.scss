@@ -10,7 +10,8 @@
 	border-radius: 35px;
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	background: var(--semi-tp-clr-1);
+	// background: var(--semi-tp-clr-1);
+	background: rgba(0, 0, 0, 0.3);
 	transition: all 0.3s;
 }
 
@@ -52,7 +53,6 @@
 	border-radius: 20px;
 	padding: 0 10px;
 	overflow: hidden;
-	transition: color 0.3s;
 
 	&:hover {
 		color: rgba(255, 255, 255);
@@ -91,7 +91,9 @@
 	height: 2px;
 	background: #fff;
 	transform: translateY(-10px);
-	transition: transform 0.5s 0.5s, rotate 0.5s;
+	transition:
+		transform 0.5s 0.5s,
+		rotate 0.5s;
 }
 
 .menu-btn::after {
@@ -101,7 +103,9 @@
 	height: 2px;
 	background: #fff;
 	transform: translateY(10px);
-	transition: transform 0.5s 0.5s, rotate 0.5s;
+	transition:
+		transform 0.5s 0.5s,
+		rotate 0.5s;
 }
 
 .menu-btn__center-line {
@@ -119,13 +123,17 @@
 .menu-btn--active::before {
 	transform: translateY(0);
 	rotate: 45deg;
-	transition: transform 0.5s, rotate 0.5s 0.5s;
+	transition:
+		transform 0.5s,
+		rotate 0.5s 0.5s;
 }
 
 .menu-btn--active::after {
 	transform: translateY(0);
 	rotate: -45deg;
-	transition: transform 0.5s, rotate 0.5s 0.5s;
+	transition:
+		transform 0.5s,
+		rotate 0.5s 0.5s;
 }
 
 // menu
@@ -134,13 +142,17 @@
 	display: grid;
 	grid-template-rows: 0fr;
 	padding: 0;
-	transition: grid-template-rows 0.5s 0.5s, padding 0.5s 0.5s;
+	transition:
+		grid-template-rows 0.5s 0.5s,
+		padding 0.5s 0.5s;
 }
 
 .menu--open {
 	grid-template-rows: 1fr;
 	padding: 20px 0;
-	transition: grid-template-rows 0.5s, padding 0.5s;
+	transition:
+		grid-template-rows 0.5s,
+		padding 0.5s;
 }
 
 .menu-nav {
@@ -153,7 +165,7 @@
 .menu-nav__link {
 	position: relative;
 	z-index: 1;
-	color: #fff;
+	color: rgba(255, 255, 255, 0.5);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -162,21 +174,35 @@
 	height: 40px;
 	border-radius: 20px;
 	opacity: 0;
-	transition: opacity 0.5s;
+	filter: blur(10px);
+	transition:
+		opacity 0.5s,
+		filter 0.5s;
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 .menu-nav__link--visible {
 	opacity: 1;
-	transition: opacity 0.5s 0.5s;
+	filter: blur(0px);
+	transition:
+		opacity 0.5s 0.5s,
+		filter 0.5s 0.5s;
 }
 
-.menu-nav__link--active::before {
-	content: "";
-	position: absolute;
-	inset: 5px;
-	background: var(--clr-3);
-	z-index: -1;
-	border-radius: 15px;
+.menu-nav__link--active {
+	color: rgb(255, 255, 255);
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 5px;
+		background: var(--clr-3);
+		z-index: -1;
+		border-radius: 15px;
+	}
 }
 
 @media screen and (width < 1050px) {
