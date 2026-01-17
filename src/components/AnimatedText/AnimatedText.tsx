@@ -12,13 +12,16 @@ const AnimatedText = ({ children }: AnimatedTextProps) => {
 
 	useEffect(() => {
 		if (!textRef.current) return;
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					setAnimateText((prev) => (prev = true));
-				}
-			});
-		});
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setAnimateText(true);
+					}
+				});
+			},
+			{ threshold: 0.5 },
+		);
 
 		if (textRef.current) observer.observe(textRef.current);
 
