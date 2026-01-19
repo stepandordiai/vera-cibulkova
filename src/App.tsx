@@ -55,10 +55,10 @@ const whyMeData = [
 		title: "Dlouhodobá spolupráce",
 		desc: "O klienty se starám dlouhodobě. Pomáhám jim lépe se orientovat ve financích, dělat správná rozhodnutí a postupně budovat finanční stabilitu i majetek.",
 	},
-	{
-		title: "VÝZVA K AKCI",
-		desc: "	Finance a reality nemusí být složité. Pomohu vám najít řešení, která dávají smysl dnes i do budoucna.",
-	},
+	// {
+	// 	title: "VÝZVA K AKCI",
+	// 	desc: "	Finance a reality nemusí být složité. Pomohu vám najít řešení, která dávají smysl dnes i do budoucna.",
+	// },
 ];
 
 function App() {
