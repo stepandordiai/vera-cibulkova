@@ -70,7 +70,7 @@ function App() {
 					<div className="hero-container">
 						<AnimatedText>
 							<h1 className="hero__title">
-								Finance a reality nemusí být složité.
+								Finance a reality nemusí být složité
 							</h1>
 						</AnimatedText>
 						<AnimatedText>
