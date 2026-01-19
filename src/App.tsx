@@ -2,13 +2,13 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import CustomBtnLink from "./components/CustomBtnLink/CustomBtnLink";
 import img from "/01.jpg";
-import "./App.scss";
 import EmailIcon from "./icons/EmailIcon";
 import TelIcon from "./icons/TelIcon";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import AnimatedText from "./components/AnimatedText/AnimatedText";
 import qr from "/qr.png";
 import logoIcon from "/logo-animal.png";
+import "./App.scss";
 
 const servicesData = [
 	{
