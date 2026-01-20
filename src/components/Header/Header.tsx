@@ -124,6 +124,7 @@ const Header = () => {
 			<div className={`menu ${menuOpen ? "menu--open" : ""}`}>
 				<nav className="menu-nav">
 					<a
+						onClick={() => setMenuOpen(false)}
 						className={`menu-nav__link menu-nav__link--active ${
 							menuOpen ? "menu-nav__link--visible" : ""
 						}`}
@@ -132,6 +133,7 @@ const Header = () => {
 						Úvod
 					</a>
 					<a
+						onClick={() => setMenuOpen(false)}
 						className={`menu-nav__link ${
 							menuOpen ? "menu-nav__link--visible" : ""
 						}`}
@@ -140,6 +142,7 @@ const Header = () => {
 						O mně
 					</a>
 					<a
+						onClick={() => setMenuOpen(false)}
 						className={`menu-nav__link ${
 							menuOpen ? "menu-nav__link--visible" : ""
 						}`}
@@ -148,6 +151,7 @@ const Header = () => {
 						Služby
 					</a>
 					<a
+						onClick={() => setMenuOpen(false)}
 						className={`menu-nav__link ${
 							menuOpen ? "menu-nav__link--visible" : ""
 						}`}
@@ -156,6 +160,7 @@ const Header = () => {
 						Proč se mnou spolupracovat
 					</a>
 					<a
+						onClick={() => setMenuOpen(false)}
 						className={`menu-nav__link ${
 							menuOpen ? "menu-nav__link--visible" : ""
 						}`}
