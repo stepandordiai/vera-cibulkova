@@ -5,16 +5,23 @@ type CustomBtnLinkProps = {
 	path: string;
 	name: string;
 	target?: string;
+	customWidth?: string;
 };
 
 const CustomBtnLink = ({
 	path,
 	name,
 	target = "_self",
+	customWidth,
 }: CustomBtnLinkProps) => {
 	return (
 		// TODO: learn this
-		<a className="header__link" href={path} target={target}>
+		<a
+			style={{ width: customWidth }}
+			className="header__link"
+			href={path}
+			target={target}
+		>
 			<span>{name}</span>
 			<span
 				style={{

@@ -8,6 +8,10 @@ import ArrowDownIcon from "./icons/ArrowDownIcon";
 import AnimatedText from "./components/AnimatedText/AnimatedText";
 import qr from "/qr.png";
 import logoIcon from "/logo-animal.png";
+import logoWhite from "/logo-white.svg";
+import edoMotionLogo from "/edo-motion.png";
+import futurex1Logo from "/futurex1.png";
+import PinIcon from "./icons/PinIcon";
 import "./App.scss";
 
 const servicesData = [
@@ -198,32 +202,69 @@ function App() {
 					</h2>
 					<div className="contact-container">
 						<div className="contact-container-inner">
-							<div style={{ display: "flex" }}>
-								<span className="contact__icon-wrapper">
-									<TelIcon size={20} />
-								</span>
-								<CustomBtnLink path="tel:+420774990731" name="774 990 731" />
+							<div
+								style={{ display: "flex", flexDirection: "column", gap: 10 }}
+							>
+								<div style={{ display: "flex", gap: 5 }}>
+									<span className="contact__icon-wrapper">
+										<TelIcon size={20} />
+									</span>
+									<CustomBtnLink
+										customWidth="100%"
+										path="tel:+420774990731"
+										name="774 990 731"
+									/>
+								</div>
+								<div style={{ display: "flex", gap: 5 }}>
+									<span className="contact__icon-wrapper">
+										<EmailIcon size={20} />
+									</span>
+									<CustomBtnLink
+										customWidth="100%"
+										path="mailto:vera.cibulkova@edofinance.cz"
+										name="vera.cibulkova@edofinance.cz"
+									/>
+								</div>
+								<div style={{ display: "flex", gap: 5 }}>
+									<span className="contact__icon-wrapper">
+										<PinIcon size={20} />
+									</span>
+									<CustomBtnLink
+										customWidth="100%"
+										path="https://maps.app.goo.gl/aJocQodtv79KDSyf7"
+										name="S.K. Neumanna 1220, 530 02 Pardubice"
+										target="_blank"
+									/>
+								</div>
 							</div>
-							<div style={{ display: "flex" }}>
-								<span className="contact__icon-wrapper">
-									<EmailIcon size={20} />
-								</span>
-								<CustomBtnLink
-									path="mailto:vera.cibulkova@edofinance.cz"
-									name="vera.cibulkova@edofinance.cz"
-								/>
+							<div
+								style={{
+									display: "grid",
+									gridTemplateColumns: "repeat(2, 1fr)",
+									gridTemplateRows: "repeat(2, 1fr)",
+									gap: 10,
+									height: "100%",
+								}}
+							>
+								<div className="contact__img-link">
+									<img src={qr} alt="" />
+								</div>
+								<div className="contact__img-link">
+									<a href="https://edogroup.cz/" target="_blank">
+										<img src={logoWhite} alt="EDO logo" />
+									</a>
+								</div>
+								<div className="contact__img-link">
+									<a href="https://edomotion.cz/" target="_blank">
+										<img src={edoMotionLogo} alt="EDO Motion logo" />
+									</a>
+								</div>
+								<div className="contact__img-link">
+									<a href="https://futurefond.cz/" target="_blank">
+										<img src={futurex1Logo} alt="FUTURE X1 logo" />
+									</a>
+								</div>
 							</div>
-							<div style={{ display: "flex" }}>
-								<span className="contact__icon-wrapper">
-									<EmailIcon size={20} />
-								</span>
-								<CustomBtnLink
-									path="https://maps.app.goo.gl/aJocQodtv79KDSyf7"
-									name="S.K. Neumanna 1220, 530 02 Pardubice"
-									target="_blank"
-								/>
-							</div>
-							<img style={{ margin: "auto 0" }} src={qr} width={150} alt="" />
 						</div>
 						<iframe
 							className="contact__map"
