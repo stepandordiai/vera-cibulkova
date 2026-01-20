@@ -1,6 +1,9 @@
 import logo from "/logo-white.svg";
 import "./Footer.scss";
 import AnimatedText from "../AnimatedText/AnimatedText";
+import TelIcon from "../../icons/TelIcon";
+import EmailIcon from "../../icons/EmailIcon";
+import PinIcon from "../../icons/PinIcon";
 
 const Footer = () => {
 	return (
@@ -11,7 +14,8 @@ const Footer = () => {
 				</a>
 				<div className="footer-nav-inner">
 					<div className="footer-container">
-						<p>Navigation</p>
+						<p>Navigovat</p>
+						<div className="footer__divider"></div>
 						<ul className="footer-nav-list">
 							<li>
 								<a className="footer-nav__link" href="#hero">
@@ -42,33 +46,64 @@ const Footer = () => {
 					</div>
 					<div className="footer-container">
 						<p>Kontaktní údaje</p>
+						<div className="footer__divider"></div>
 						<ul className="footer-nav-list">
 							<li>
 								<span>Věra Cibulková</span>
 							</li>
 							<li>
-								<a href="tel:+420774990731">774 990 731</a>
-							</li>
-							<li>
-								<a href="mailto:vera.cibulkova@edofinance.cz">
-									vera.cibulkova@edofinance.cz
+								<a
+									style={{
+										display: "flex",
+										justifyContent: "flex-start",
+										alignItems: "center",
+										gap: 5,
+									}}
+									href="tel:+420774990731"
+								>
+									<TelIcon /> <span>774 990 731</span>
 								</a>
 							</li>
 							<li>
 								<a
+									style={{
+										display: "flex",
+										justifyContent: "flex-start",
+										alignItems: "center",
+										gap: 5,
+									}}
+									href="mailto:vera.cibulkova@edofinance.cz"
+								>
+									<EmailIcon />
+									<span>vera.cibulkova@edofinance.cz</span>
+								</a>
+							</li>
+							<li>
+								<a
+									style={{
+										display: "flex",
+										justifyContent: "flex-start",
+										alignItems: "center",
+										gap: 5,
+									}}
 									href="https://maps.app.goo.gl/AzfwHGpCEAT1RjGo8"
 									target="_blank"
 								>
-									S.K. Neumanna 1220, 530 02 Pardubice
+									<PinIcon />
+									<span>S.K. Neumanna 1220, 530 02 Pardubice</span>
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div className="footer-container">
 						<p>Provozovatel webu</p>
+						<div className="footer__divider"></div>
 						<ul className="footer-nav-list">
 							<li>
-								<span>Provozovatel webu je Věra Cibulková, IČ 23413034</span>
+								<span>Provozovatel webu je Věra Cibulková</span>
+							</li>
+							<li>
+								<span>IČ 23413034</span>
 							</li>
 							<li>
 								<span>FO podnikající podle Živnostenského zákona.</span>
@@ -87,7 +122,10 @@ const Footer = () => {
 			</AnimatedText>
 			<div className="footer__divider"></div>
 			<div className="footer-bottom">
-				<p>Všechna práva vyhrazena</p>
+				<div>
+					<p>Všechna práva vyhrazena</p>
+					<p>&copy; 2026 www.veracibulkova.cz</p>
+				</div>
 				<p className="author">
 					Website created by{" "}
 					<a href="https://www.heeeyooo.studio/" target="_blank">
