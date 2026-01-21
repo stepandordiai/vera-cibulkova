@@ -4,6 +4,7 @@ import AnimatedText from "../AnimatedText/AnimatedText";
 import TelIcon from "../../icons/TelIcon";
 import EmailIcon from "../../icons/EmailIcon";
 import PinIcon from "../../icons/PinIcon";
+import PersonIcon from "../../icons/PersonIcon";
 
 const Footer = () => {
 	return (
@@ -49,7 +50,16 @@ const Footer = () => {
 						<div className="footer__divider"></div>
 						<ul className="footer-nav-list">
 							<li>
-								<span>Věra Cibulková</span>
+								<span
+									style={{
+										display: "flex",
+										justifyContent: "flex-start",
+										alignItems: "center",
+										gap: 5,
+									}}
+								>
+									<PersonIcon /> <span>Věra Cibulková</span>
+								</span>
 							</li>
 							<li>
 								<a
