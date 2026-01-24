@@ -1,12 +1,24 @@
-import logo from "/logo-white.svg";
-import "./Footer.scss";
 import AnimatedText from "../AnimatedText/AnimatedText";
 import TelIcon from "../../icons/TelIcon";
 import EmailIcon from "../../icons/EmailIcon";
 import PinIcon from "../../icons/PinIcon";
 import PersonIcon from "../../icons/PersonIcon";
+import { useState } from "react";
+import logo from "/logo-white.svg";
+import "./Footer.scss";
 
 const Footer = () => {
+	const [valueCopied, setValueCopied] = useState(false);
+
+	const copyValue = (value: string) => {
+		navigator.clipboard.writeText(value);
+
+		setValueCopied(true);
+		setTimeout(() => {
+			setValueCopied(false);
+		}, 2000);
+	};
+
 	return (
 		<footer className="footer">
 			<nav className="footer-nav">
@@ -113,7 +125,19 @@ const Footer = () => {
 								<span>Provozovatel webu je Věra Cibulková</span>
 							</li>
 							<li>
-								<span>IČ 23413034</span>
+								IČ{" "}
+								<button
+									onClick={() => copyValue("23413034")}
+									className="footer__btn"
+									style={
+										valueCopied
+											? { cursor: "not-allowed", color: "var(--clr-2)" }
+											: { cursor: "pointer", color: "#fff" }
+									}
+									disabled={valueCopied}
+								>
+									{valueCopied ? "Copied" : "23413034"}
+								</button>
 							</li>
 							<li>
 								<span>FO podnikající podle Živnostenského zákona.</span>

@@ -43,6 +43,12 @@
 	}
 }
 
+.footer__btn {
+	&:hover {
+		color: var(--clr-2);
+	}
+}
+
 .footer-nav__link {
 	color: #fff;
 
