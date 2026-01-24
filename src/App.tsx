@@ -246,24 +246,30 @@ function App() {
 									height: "100%",
 								}}
 							>
-								<div className="contact__img-link">
+								<a className="contact__img-link" href={qr}>
 									<img src={qr} alt="" />
-								</div>
-								<div className="contact__img-link">
-									<a href="https://edogroup.cz/" target="_blank">
-										<img src={logoWhite} alt="EDO logo" />
-									</a>
-								</div>
-								<div className="contact__img-link">
-									<a href="https://edomotion.cz/" target="_blank">
-										<img src={edoMotionLogo} alt="EDO Motion logo" />
-									</a>
-								</div>
-								<div className="contact__img-link">
-									<a href="https://futurefond.cz/" target="_blank">
-										<img src={futurex1Logo} alt="FUTURE X1 logo" />
-									</a>
-								</div>
+								</a>
+								<a
+									className="contact__img-link"
+									href="https://edogroup.cz/"
+									target="_blank"
+								>
+									<img src={logoWhite} alt="EDO logo" />
+								</a>
+								<a
+									className="contact__img-link"
+									href="https://edomotion.cz/"
+									target="_blank"
+								>
+									<img src={edoMotionLogo} alt="EDO Motion logo" />
+								</a>
+								<a
+									className="contact__img-link"
+									href="https://futurefond.cz/"
+									target="_blank"
+								>
+									<img src={futurex1Logo} alt="FUTURE X1 logo" />
+								</a>
 							</div>
 						</div>
 						<iframe
