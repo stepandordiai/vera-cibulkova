@@ -96,6 +96,14 @@
 		rotate 0.5s;
 }
 
+.menu-btn--active::before {
+	transform: translateY(0) !important;
+	rotate: 45deg;
+	transition:
+		transform 0.5s,
+		rotate 0.5s 0.5s;
+}
+
 .menu-btn::after {
 	content: "";
 	position: absolute;
@@ -108,6 +116,14 @@
 		rotate 0.5s;
 }
 
+.menu-btn--active::after {
+	transform: translateY(0) !important;
+	rotate: -45deg;
+	transition:
+		transform 0.5s,
+		rotate 0.5s 0.5s;
+}
+
 .menu-btn__center-line {
 	width: 50px;
 	height: 2px;
@@ -118,22 +134,6 @@
 
 .menu-btn__center-line--active {
 	opacity: 0;
-}
-
-.menu-btn--active::before {
-	transform: translateY(0);
-	rotate: 45deg;
-	transition:
-		transform 0.5s,
-		rotate 0.5s 0.5s;
-}
-
-.menu-btn--active::after {
-	transform: translateY(0);
-	rotate: -45deg;
-	transition:
-		transform 0.5s,
-		rotate 0.5s 0.5s;
 }
 
 // menu
