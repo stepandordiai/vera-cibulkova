@@ -33,7 +33,7 @@ body {
 	align-items: flex-start;
 	flex-direction: column;
 	padding: 10px;
-	background-image: url("/hero-bg.jpg");
+	background-image: url("/vera-cibulkova-01-c.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -46,22 +46,11 @@ body {
 	gap: 10px;
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
-	// background: var(--semi-tp-clr-1);
 	background: rgba(0, 0, 0, 0.2);
 	padding: 20px;
 	border-radius: 40px;
 	width: 100%;
-	// opacity: 0;
-	// filter: blur(10px);
-	// animation: animateHeroContainer 1s forwards;
 }
-
-// @keyframes animateHeroContainer {
-// 	to {
-// 		opacity: 1;
-// 		filter: blur(0);
-// 	}
-// }
 
 .hero__title {
 	font-size: clamp(2rem, 4vw, 4rem);

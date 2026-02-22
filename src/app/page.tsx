@@ -107,7 +107,7 @@ export default function Home() {
 					<AnimatedText>
 						<img
 							className="about-me__img"
-							src="/01.jpg"
+							src="/vera-cibulkova-02-c.jpg"
 							alt="Věra Cibulková - Finanční a realitní poradce EDO Finance"
 						/>
 					</AnimatedText>
@@ -282,7 +282,7 @@ export default function Home() {
 					</div>
 					<iframe
 						className="contact__map"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.748386863162!2d15.775960311998487!3d50.030243617411955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc91d914e045%3A0x8e8920c9ebba8835!2sS.%20K.%20Neumanna%201220%2C%20530%2002%20Pardubice%20V-Zelen%C3%A9%20P%C5%99edm%C4%9Bst%C3%AD!5e1!3m2!1sen!2scz!4v1768481888847!5m2!1sen!2scz"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10251.969222832708!2d15.778541000000002!3d50.03024!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc91d914e045%3A0x8e8920c9ebba8835!2sS.%20K.%20Neumanna%201220%2C%20530%2002%20Pardubice%20V-Zelen%C3%A9%20P%C5%99edm%C4%9Bst%C3%AD!5e0!3m2!1sen!2scz!4v1771801361827!5m2!1sen!2scz"
 						// style="border:0;"
 						// allowfullscreen=""
 						// loading="lazy"

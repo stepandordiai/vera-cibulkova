@@ -1,1 +1,1 @@
-# Vera Cibulkova
+# Věra Cibulková
