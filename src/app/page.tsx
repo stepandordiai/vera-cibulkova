@@ -1,10 +1,11 @@
-import CustomBtnLink from "./components/CustomBtnLink/CustomBtnLink";
-import EmailIcon from "./icons/EmailIcon";
-import TelIcon from "./icons/TelIcon";
-import ArrowDownIcon from "./icons/ArrowDownIcon";
-import AnimatedText from "./components/AnimatedText/AnimatedText";
-import PinIcon from "./icons/PinIcon";
 import type { Metadata } from "next";
+import AnimatedText from "./components/AnimatedText/AnimatedText";
+import Image from "next/image";
+import CustomBtnLink from "./components/CustomBtnLink/CustomBtnLink";
+import ArrowDownIcon from "./icons/ArrowDownIcon";
+import TelIcon from "./icons/TelIcon";
+import EmailIcon from "./icons/EmailIcon";
+import PinIcon from "./icons/PinIcon";
 import "./Home.scss";
 
 const servicesData = [
@@ -102,7 +103,6 @@ export default function Home() {
 				<h2>
 					<span>O MNĚ</span>
 				</h2>
-
 				<div className="about-me-container">
 					<AnimatedText>
 						<img
@@ -121,7 +121,6 @@ export default function Home() {
 							</p>
 						</AnimatedText>
 						<br />
-
 						<AnimatedText>
 							<p>
 								Dnes navrhuji řešení napříč trhem s nadhledem a důrazem na to,
@@ -131,7 +130,6 @@ export default function Home() {
 								finančními rozhodnutími v osobním i podnikatelském životě.
 							</p>
 						</AnimatedText>
-
 						<br />
 						<AnimatedText>
 							<p>
@@ -156,10 +154,12 @@ export default function Home() {
 					{servicesData.map((service, i) => {
 						return (
 							<li key={i} className="services-item">
-								<img
-									className="services-item__icon"
+								<Image
+									style={{ marginBottom: "20px" }}
 									src={service.icon}
-									alt=""
+									width={64}
+									height={64}
+									alt={service.title}
 								/>
 								<AnimatedText>
 									<h3>{service.title}</h3>
@@ -199,7 +199,8 @@ export default function Home() {
 								<img
 									className="why-me-item__icon"
 									src="/logo-animal.png"
-									alt=""
+									alt={whyMe.title}
+									loading="lazy"
 								/>
 							</li>
 						);
@@ -283,9 +284,6 @@ export default function Home() {
 					<iframe
 						className="contact__map"
 						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10251.969222832708!2d15.778541000000002!3d50.03024!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc91d914e045%3A0x8e8920c9ebba8835!2sS.%20K.%20Neumanna%201220%2C%20530%2002%20Pardubice%20V-Zelen%C3%A9%20P%C5%99edm%C4%9Bst%C3%AD!5e0!3m2!1sen!2scz!4v1771801361827!5m2!1sen!2scz"
-						// style="border:0;"
-						// allowfullscreen=""
-						// loading="lazy"
 						referrerPolicy="no-referrer-when-downgrade"
 					></iframe>
 				</div>

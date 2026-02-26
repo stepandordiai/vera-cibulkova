@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	font-family: "Urbanist", sans-serif;
+	font-family: var(--font-urbanist);
 	background: var(--clr-4);
 	color: #fff;
 }
@@ -118,10 +118,10 @@ body {
 }
 
 .about-me__sign {
-	font-family: "Ephesis", cursive;
-	font-size: 4rem;
+	font-family: var(--font-ephesis);
+	font-size: clamp(3rem, 4vw, 4rem);
 	text-align: right;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .services-list {
@@ -152,7 +152,6 @@ body {
 .why-me-item {
 	position: relative;
 	z-index: 1;
-	// background: rgba(255, 255, 255, 0.1);
 	background-image: url("/bg-black.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -189,17 +188,10 @@ body {
 	filter: blur(5px);
 }
 
-.services-item__icon {
-	width: 64px;
-	height: 64px;
-	margin-bottom: 20px;
-}
-
 h2 {
 	width: max-content;
 	padding: 5px;
 	border-radius: 20px;
-	// background: var(--clr-1);
 	background: rgba(255, 255, 255, 0.1);
 	height: 40px;
 	color: var(--clr-2);
