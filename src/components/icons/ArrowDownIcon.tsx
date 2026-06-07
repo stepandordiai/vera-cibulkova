@@ -1,6 +1,4 @@
-import type { Icon } from "../interfaces";
-
-const ArrowDownIcon = ({ size = 16 }: Icon) => {
+const ArrowDownIcon = ({ size = 16 }) => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
