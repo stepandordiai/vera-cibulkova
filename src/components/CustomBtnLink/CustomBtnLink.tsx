@@ -1,4 +1,4 @@
-import ArrowUpRightIcon from "../../icons/ArrowUpRightIcon";
+import ArrowUpRightIcon from "@/components/icons/ArrowUpRightIcon";
 import "./CustomBtnLink.scss";
 
 type CustomBtnLinkProps = {

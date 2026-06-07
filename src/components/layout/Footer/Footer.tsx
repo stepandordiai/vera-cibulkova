@@ -1,10 +1,10 @@
 "use client";
 
 import AnimatedText from "../../AnimatedText/AnimatedText";
-import TelIcon from "@/app/icons/TelIcon";
-import EmailIcon from "@/app/icons/EmailIcon";
-import PinIcon from "@/app/icons/PinIcon";
-import PersonIcon from "@/app/icons/PersonIcon";
+import TelIcon from "@/components/icons/TelIcon";
+import EmailIcon from "@/components/icons/EmailIcon";
+import PinIcon from "@/components/icons/PinIcon";
+import PersonIcon from "@/components/icons/PersonIcon";
 import { useState } from "react";
 import "./Footer.scss";
 
@@ -159,12 +159,16 @@ const Footer = () => {
 			<div className="footer__divider"></div>
 			<div className="footer-bottom">
 				<div>
-					<p>&copy; 2026 Věra Cibulková</p>
+					<p>&copy; {new Date().getFullYear()} Věra Cibulková</p>
 					<p>Všechna práva vyhrazena</p>
 				</div>
 				<p className="author">
 					Website created by{" "}
-					<a href="https://www.heeeyooo.studio/" target="_blank">
+					<a
+						href="https://www.heeeyooo.com"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						heeeyooo studio
 					</a>
 				</p>

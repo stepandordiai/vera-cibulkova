@@ -1,11 +1,10 @@
-import type { MetadataRoute } from "next";
-
-const baseUrl = "https://www.veracibulkova.cz";
+import { MetadataRoute } from "next";
+import { BASE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	return [
 		{
-			url: baseUrl,
+			url: BASE_URL,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 1,

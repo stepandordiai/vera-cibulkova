@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import AnimatedText from "./components/AnimatedText/AnimatedText";
+import AnimatedText from "@/components/AnimatedText/AnimatedText";
 import Image from "next/image";
-import CustomBtnLink from "./components/CustomBtnLink/CustomBtnLink";
-import ArrowDownIcon from "./icons/ArrowDownIcon";
-import TelIcon from "./icons/TelIcon";
-import EmailIcon from "./icons/EmailIcon";
-import PinIcon from "./icons/PinIcon";
+import CustomBtnLink from "@/components/CustomBtnLink/CustomBtnLink";
+import ArrowDownIcon from "@/components/icons/ArrowDownIcon";
+import TelIcon from "@/components/icons/TelIcon";
+import EmailIcon from "@/components/icons/EmailIcon";
+import PinIcon from "@/components/icons/PinIcon";
 import "./Home.scss";
 
 const servicesData = [
@@ -54,21 +53,6 @@ const whyMeData = [
 		desc: "O klienty se starám dlouhodobě. Pomáhám jim lépe se orientovat ve financích, dělat správná rozhodnutí a postupně budovat finanční stabilitu i majetek.",
 	},
 ];
-
-export async function generateMetadata(): Promise<Metadata> {
-	return {
-		title: "Věra Cibulková | Finanční a realitní poradce EDO Finance",
-		description:
-			"Profesionální poradenství v oblasti financí a realit pod hlavičkou EDO. Specializuji se na hypotéky, investice a prodej nemovitostí s lidským přístupem.",
-		// openGraph: {
-		// 	title: "Věra Cibulková | Finanční a realitní poradce EDO Finance",
-		// 	description:
-		// 		"Profesionální poradenství v oblasti financí a realit pod hlavičkou EDO. Specializuji se na hypotéky, investice a prodej nemovitostí s lidským přístupem.",
-		// 	url: "https://www.veracibulkova.cz",
-		// 	type: "website",
-		// },
-	};
-}
 
 export default function Home() {
 	return (

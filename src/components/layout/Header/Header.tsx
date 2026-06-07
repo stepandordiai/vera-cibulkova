@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CustomBtnLink from "../../CustomBtnLink/CustomBtnLink";
+import CustomBtnLink from "@/components/CustomBtnLink/CustomBtnLink";
 import "./Header.scss";
 
 const Header = () => {
