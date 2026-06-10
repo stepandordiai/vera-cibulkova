@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: "/docs/screenshots/vera-cibulkova-ss-v1.jpg",
+				url: "/vera-cibulkova-og.png",
 				width: 1200,
 				height: 630,
 				alt: "Věra Cibulková – Finanční a realitní poradce EDO Finance",
